@@ -1,0 +1,19 @@
+<div class="category">
+  <button class="menu_btn" *ngFor="let category of categoryList"
+     [class.selected]="category.Id === selectedCategoryId"
+       (click)="selectCategory(category.Id)">{{category.Name}}</button>
+</div>  
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search product by name">
+
+<div class="products">
+  <div class="gallery" *ngFor="let product of productList | filter : searchText">
+      <div *ngIf="product.CategoryId == selectedCategoryId">
+          <h4>{{product.Name}}</h4>
+          <img [src]="product.Image">
+          <label>${{product.Price}}</label>
+          <button [ngClass]="product.AddedToCart ? 'added_btn' : 'add_btn'"
+           [disabled]="product.AddedToCart" (click)="addToCart(product)">{{product.AddedToCart  ? 'Added to cart' :'Add to cart'}} </button> 
+      </div>       
+  </div>
+</div>
