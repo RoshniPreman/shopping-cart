@@ -3,6 +3,8 @@
     width: 160px;
     position: fixed;
     background-color: #f2f2f2;
+    margin-top: 77px;
+    left : 0;
 }
 
 .gallery h4{
@@ -10,7 +12,14 @@
     height: 20px;
 }
 
-label{
+p{
+    margin-top: 100px;
+    margin-left: 180px;
+    width: auto;
+    font-size: 17px;
+    float: left;
+}
+.gallery label{
     font-weight: bold;
     margin-left: 10px;
 }
@@ -26,6 +35,17 @@ img{
     cursor: pointer;
     padding: 18px;
     width: inherit;
+}
+
+.category label{
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: inherit;
+    cursor: pointer;
+    float: left;
+    border-bottom: 1px solid #e2dcdc;
 }
 
 .menu_btn {
@@ -52,7 +72,7 @@ img{
     margin-right: 10px;
 }
 
-.added_btn{
+.added_btn {
     float: right;
     background-color: #e2dcdc;
     cursor: no-drop; 
@@ -66,26 +86,30 @@ img{
     background-color: #ccc; 
 }
 
+.disabled:hover {
+    cursor: not-allowed !important;
+}
 .selected {
     background-color: #ccc !important;
   }
 
 input[type='text'] {
     margin-left: 25px;
-    margin-top: 9px;
+    margin-top: 91px;
     padding: 7px;
 }
 
-.products{
+.products {
     margin-left: 180px;
-    margin-top: 15px;
+    margin-top: 29px;
 }
 
-.gallery{
+.gallery {
     width: 200px;
     float: left;
     height: 300px;
     border: 1px solid #eee;
     border-radius: 10px;
-    margin-right: 10px;
+    margin-right: 25px;
+    margin-bottom: 5px;
 }

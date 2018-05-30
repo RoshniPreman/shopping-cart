@@ -2,6 +2,9 @@
     background-color:  #414141;
     color: #888787;
     padding:  5px;
+    position: fixed;
+    width: 100%;
+    top : 0;
 }
 
 h2{
@@ -15,7 +18,7 @@ button{
     margin-right: 33px;
     background-color: #e2dcdc;
     border: none;
-    color: #888787;
+    color: black;
     font-family: serif;
     cursor: pointer;
     padding: 6px 20px 6px 20px;

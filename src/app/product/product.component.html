@@ -1,12 +1,12 @@
 <div class="category">
-    <label><input type="checkbox" name="checkbox" [(ngModel)]="isAllCategory" (change)="checkboxChange()" value="value">All Categories</label>
-
     <button class="menu_btn" *ngFor="let category of categoryList"
-          [class.selected]="category.Id === selectedCategoryId && !isAllCategory" [disabled]="isAllCategory"
+          [class.selected]="category.Id === selectedCategoryId" 
       (click)="selectCategory(category)">{{category.Name}}</button>
 </div>  
-<p style="margin-left: 180px; width: auto;font-size: 17px;float: left;">
-   {{isAllCategory ? 'Search in all categories' : 'Search in category'}} <span style="font-weight: bold">{{isAllCategory ? '' : selectedCategoryName}}  : </span>
+<p>
+   {{!selectedCategoryId ? 'Search in all categories' : 'Search in category'}}
+   <span style="font-weight: bold">{{!selectedCategoryId? '' : selectedCategoryName}}  : </span>
+
 </p>
 <input type="text" [(ngModel)]="searchText" placeholder="Search product by name">
 
@@ -16,6 +16,8 @@
           <img [src]="product.Image">
           <label>${{product.Price}}</label>
           <button [ngClass]="product.AddedToCart ? 'added_btn' : 'add_btn'"
-           [disabled]="product.AddedToCart" (click)="addToCart(product)">{{product.AddedToCart  ? 'Added to cart' :'Add to cart'}} </button>     
+               [disabled]="product.AddedToCart" (click)="addToCart(product)">
+               {{product.AddedToCart  ? 'Added to cart' :'Add to cart'}}
+           </button>     
   </div>
 </div>

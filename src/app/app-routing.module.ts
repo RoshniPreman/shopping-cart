@@ -7,7 +7,8 @@ import { ProductComponent } from './product/product.component';
 const routes : Routes = [
   { path : 'index' , component : ProductComponent},
   { path : 'cartitems' , component : CartitemsComponent},
-  { path : '' , redirectTo : '/index' , pathMatch : 'full'}
+  { path : '' , redirectTo : '/index' , pathMatch : 'full'},
+  { path : '**' , component :ProductComponent}
 ]
 
 @NgModule({

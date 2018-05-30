@@ -5,8 +5,6 @@ import { product , products } from './models/product';
 @Injectable()
 export class ShoppingService {
 
-  constructor() { }
-
   categoryList = categories;
   cartItems : product[] = [];
   productList = products; 

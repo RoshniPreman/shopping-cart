@@ -1,8 +1,8 @@
-td{
+td {
     padding: 30px;
 }
 
-th{
+th {
     padding: 10px;
 }
 
@@ -10,10 +10,14 @@ select {
     width : 50px;
 }
 
+h2 {
+    margin-top: 100px;
+    text-align: center;
+}
 table {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 105px;
     width: 65%;
     text-align: left;
 }

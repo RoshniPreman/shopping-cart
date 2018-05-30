@@ -18,41 +18,36 @@ export class ProductComponent implements OnInit {
   selectedCategoryName : string;
   productList : product[];
   searchText : string;
-  isAllCategory : boolean;
-
+  
   ngOnInit() {
     this.getCategories(); 
     this.selectedCategoryId = this.categoryList[0].Id;
     this.selectedCategoryName = this.categoryList[0].Name;
-    this.getProducts(this.categoryList[0].Id);
+    this.productList = this.shoppingService.getAllProducts();
   }
 
   getCategories() : void{
       this.categoryList = this.shoppingService.getCategory();
   }
-  getProducts(id : number): void{
+  getProductsById(id : number): void{
     this.productList = this.shoppingService.getProductsById(id);
   }
 
   selectCategory (category : category) : void {
       this.selectedCategoryId = category.Id;
       this.selectedCategoryName = category.Name;
-      this.getProducts(this.selectedCategoryId);
+
+      if(this.selectedCategoryId){
+        this.getProductsById(this.selectedCategoryId);
+      }
+      else{
+        this.productList = this.shoppingService.getAllProducts();
+      }
+      
   }
 
   addToCart(product : product){
     product.AddedToCart = true;
     this.shoppingService.addToCart(product);
-  }
-
-  checkboxChange(){
-
-    if(this.isAllCategory){
-      this.productList = this.shoppingService.getAllProducts();
-    }
-    else{
-      this.getProducts(this.selectedCategoryId);
-    }
-   
   }
 }

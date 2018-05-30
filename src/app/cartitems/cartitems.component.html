@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="shoppingService.cartItems.length != 0">
     <thead>
         <th>Image</th>
         <th>Description</th>
@@ -20,10 +20,10 @@
                 </select>
             </td>
             <td>
-                {{cart.Price}}
+                ${{cart.Price}}
             </td>
             <td>
-                {{cart.Price * cart.Quantity}}
+                ${{cart.Price * cart.Quantity}}
             </td>
             <td>
                 <button class="add_btn" (click)="removeItem(cart)">Remove</button> 
@@ -32,8 +32,9 @@
         <tr *ngIf="shoppingService.cartItems.length !=0">
             <td colspan="3"></td>
             <td>Total</td>
-            <td>{{getTotal()}}</td>
+            <td>${{getTotal()}}</td>
             <td></td>
         </tr>
     </tbody>
 </table>
+<h2 *ngIf="shoppingService.cartItems.length == 0">Your Shopping Cart is empty...!!!</h2>
