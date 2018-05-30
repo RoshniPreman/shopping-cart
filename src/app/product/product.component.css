@@ -5,7 +5,7 @@
     background-color: #f2f2f2;
 }
 
-h4{
+.gallery h4{
     text-align: center;
     height: 20px;
 }
@@ -71,8 +71,8 @@ img{
   }
 
 input[type='text'] {
-    margin-left: 180px;
-    margin-top: 20px;
+    margin-left: 25px;
+    margin-top: 9px;
     padding: 7px;
 }
 
